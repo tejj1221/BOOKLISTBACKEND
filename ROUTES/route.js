@@ -133,7 +133,7 @@ route.get("/book",async(req,res)=>{
                const check=await user.findOne({_id:decoded.data})
                //if checked then valid user
                if(check){
-                     const data=await userdata.create({id:check._id})
+                     const data=await userdata.find({id:check._id})
                      return res.status(200).json({
                         status:"success",
                         message:"added book successfully",
