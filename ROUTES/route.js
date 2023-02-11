@@ -6,6 +6,11 @@ const jwt=require("jsonwebtoken")
 const route=express.Router()
 const secret="siva"
 module.exports=route
+route.get("/",async(req,res)=>{
+    res.status(200).json({
+        message:"success kjhgfds"
+    })
+})
 route.get("/login",async(req,res)=>{
     try{
         const check= await user.findOne({email:req.body.email})
